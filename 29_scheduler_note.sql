@@ -1,0 +1,9 @@
+-- 29_scheduler_note.sql
+-- In production, use SQL Server Agent (or ADF/Airflow) to schedule steps:
+-- 1) Execute 21_cleaning_rules.sql
+-- 2) Execute 22_fk_validation_and_mapping.sql
+-- 3) Execute 23_load_to_ods.sql
+-- 4) Execute 24_build_dimensions.sql
+-- 5) Execute 25_build_fact_sales.sql
+-- Each step should call dbo.usp_LogStart/End or rely on 23/24/25 which log internally.
+-- Configure alerts on failures and thresholds via cfg.ETL_Config.
